@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GPA Calculator</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>GPA Calculator</header>
+	<div class="content">
+		<div class="initial-input">
+			Enter your grades and the total credits for each subject 
+		</div>
+		<div class="all-input">
+			<table class="table-class" id="input-table">
+				<tr><th>S. No.</th><th>Your Grade</th><th>Total Credits</th></tr>
+				<tr> <td></td> <td><input onblur="calculateGPA()" type="text" class="grade" name="g" id="grd"></td> <td><input onblur="calculateGPA()" type="text" class="credit" name="c" id="cred"></td> <td><input type="button" value="Add Row" onclick="addRow('input-table')" id="table-btn"></td></tr>
+			</table>
+			<div><button class="btn" onclick="calculateGPA()">Submit</button></div>
+		</div>
+		<div id="output"></div>
+	</div>
+	<footer>Made by Blessy Karunya</footer>
+	<script src="index.js" charset="UTF-8"></script>
+</body>
+</html>

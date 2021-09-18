@@ -1,0 +1,143 @@
+body {
+	background-color: rgb(205, 255, 218);
+}
+
+header {
+	padding-top: 20px;
+	padding-bottom: 25px;
+	margin: 1px;
+	background-color: green;
+	color: white;
+	text-align: center;
+	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+	font-weight: bolder;
+	font-size: x-large;
+	height: auto;
+}
+
+footer {
+	padding: 15px;
+	margin: 1px;
+	background-color: #000000;
+	color: white;
+	font-size: small;
+	text-align: center;
+}
+
+@media screen and (max-height: 400px) {
+	footer {
+		display: none;
+	}
+
+	img {
+		display: none;
+	}
+}
+
+img {
+	position: absolute;
+	right: 2px;
+	top: 100px;
+	vertical-align: middle;
+	max-width: 70%;
+	max-height: 75%;
+}
+
+.book-img {
+	float: right;
+}
+
+button {
+	border-radius: 150px;
+	border-color: black;
+	padding: 10px;
+	width: 4cm;
+	font-family: cursive;
+	font-size: large;
+    text-align: center;
+	font-weight: bolder;
+	margin: 2%;
+}
+
+button:hover {
+	background-color: rgb(9, 255, 0);
+}
+
+button:focus {
+	background-color: chartreuse;
+}
+
+.buttons {
+	text-align: center;
+	width: 50%;
+	align-items: center;
+	padding-top: 40px;
+}
+
+.plain-text {
+	padding-top: 125px;
+	font-size: xx-large;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	width: 50%;
+}
+
+.content {
+	height: 525px;
+}
+
+.initial-input {
+	font-size: x-large;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	padding: 50px;
+}
+
+.table-class {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 600px;
+	border-collapse: collapse;
+}
+
+td, th {
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+	padding: 2%;
+}
+
+table.table-class {
+	counter-reset: rowNumber;
+}
+
+table.table-class tr:nth-child(n+2) {
+	counter-increment: rowNumber;
+}
+
+table.table-class tr:nth-child(n+2) td:first-child::before {
+	content: counter(rowNumber);
+}
+
+.grade {
+	width: 50px;
+	height: 25px;
+}
+
+.credit {
+	width: 50px;
+	height: 25px;
+}
+
+#table-btn {
+	width: 75px;
+	height: 30px;
+	border-radius: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+::placeholder {
+	width: 5px;
+}
