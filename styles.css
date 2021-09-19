@@ -13,6 +13,7 @@ header {
 	font-weight: bolder;
 	font-size: x-large;
 	height: auto;
+	/* min-width: 100%; */
 }
 
 footer {
@@ -22,24 +23,27 @@ footer {
 	color: white;
 	font-size: small;
 	text-align: center;
+	/* min-width: 100%; */
 }
 
 @media screen and (max-height: 400px) {
-	footer {
+	img {
 		display: none;
 	}
+}
 
+@media screen and (max-width: 600px) {
 	img {
 		display: none;
 	}
 }
 
 img {
-	position: absolute;
+	position: fixed;
 	right: 2px;
 	top: 100px;
 	vertical-align: middle;
-	max-width: 70%;
+	max-width: 75%;
 	max-height: 75%;
 }
 
@@ -82,52 +86,60 @@ button:focus {
 	width: 50%;
 }
 
+.content-table {
+	display: table;
+	min-height: 525px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	align-items: center;
+	text-align: center;
+}
+
 .content {
-	height: 525px;
+	min-height: 525px;
+	height: auto;
+	text-align: center;
 }
 
 .initial-input {
 	font-size: x-large;
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
-	padding: 50px;
+	padding: 30px;
+	display: table;
+	
 }
 
 .table-class {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	width: 600px;
+	min-width: 500px;
+	width: auto;
 	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 td, th {
-	margin-left: auto;
-	margin-right: auto;
 	border: 1px solid black;
 	padding: 2%;
-}
-
-table.table-class {
-	counter-reset: rowNumber;
-}
-
-table.table-class tr:nth-child(n+2) {
-	counter-increment: rowNumber;
-}
-
-table.table-class tr:nth-child(n+2) td:first-child::before {
-	content: counter(rowNumber);
+	display: table-cell;
 }
 
 .grade {
 	width: 50px;
 	height: 25px;
+	text-align: center;
+	font-size: large;
 }
 
 .credit {
 	width: 50px;
 	height: 25px;
+	text-align: center;
+	font-size: large;
 }
 
 #table-btn {
@@ -138,6 +150,56 @@ table.table-class tr:nth-child(n+2) td:first-child::before {
 	font-weight: bold;
 }
 
+#table-btn:hover {
+	background-color: rgb(177, 255, 177);
+}
+
 ::placeholder {
 	width: 5px;
+}
+
+.submit {
+	text-align: center;
+	display: table;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.output {
+	text-align: center;
+	font-size: larger;
+	font-weight: bolder;
+	padding: 10px;
+	width: auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#output1, #output2 {
+	text-align: center;
+	font-size: larger;
+	font-weight: bolder;
+	padding: 10px;
+	width: auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.all-input {
+	display: table;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.btn-small {
+	border-radius: 150px;
+	border-color: black;
+	padding: 5px;
+	width: 80px;
+	font-family: cursive;
+	font-size: medium;
+    text-align: center;
+	font-weight: bold;
+}
+
+#btn-column {
+	column-width: 90px;
 }
