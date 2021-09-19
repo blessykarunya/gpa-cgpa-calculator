@@ -7,18 +7,19 @@
 </head>
 <body>
 	<header>GPA Calculator</header>
-	<div class="content">
+	<div class="content-table">
 		<div class="initial-input">
 			Enter your grades and the total credits for each subject 
 		</div>
 		<div class="all-input">
 			<table class="table-class" id="input-table">
-				<tr><th>S. No.</th><th>Your Grade</th><th>Total Credits</th></tr>
-				<tr> <td></td> <td><input onblur="calculateGPA()" type="text" class="grade" name="g" id="grd"></td> <td><input onblur="calculateGPA()" type="text" class="credit" name="c" id="cred"></td> <td><input type="button" value="Add Row" onclick="addRow('input-table')" id="table-btn"></td></tr>
+				<tr><th>S. No.</th><th>Total Credits</th><th>Your Grade</th></tr>
+				<tr> <td>1</td> <td><input type="text" class="credit" name="c" id="cred"></td> <td><input type="text" class="grade" name="g" id="grd"></td> <td id="btn-column"><input type="button" value="Add Row" onclick="addRow('input-table')" id="table-btn"></td></tr>
 			</table>
-			<div><button class="btn" onclick="calculateGPA()">Submit</button></div>
 		</div>
-		<div id="output"></div>
+		<div class="submit"><button class="btn-small" onclick="calculateGPA()">Submit</button></div>
+		<div class="output">Your GPA is</div>
+		<div id="output1"></div>
 	</div>
 	<footer>Made by Blessy Karunya</footer>
 	<script src="index.js" charset="UTF-8"></script>
