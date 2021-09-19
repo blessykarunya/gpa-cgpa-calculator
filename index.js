@@ -6,7 +6,7 @@ function addRow(tableID) {
 	var len = x.rows.length; // get the total number of rows
 	
 	// set the innerHTML of the first row 
-	// new_row.cells[0].innerHTML = len;
+	new_row.cells[0].innerHTML = len;
 
 	// grab the input from the first cell and update its ID and value
 	var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
@@ -22,37 +22,85 @@ function addRow(tableID) {
 }
 
 function calculateGPA() {
-	var grade_arr = getElementsByName('grd');
-	var credit_arr = getElementsByName('cred');
+	var grade_arr = document.getElementsByName("g");
+	var credit_arr = document.getElementsByName("c");
 
 	var grade_num = new Array(grade_arr.length);
-	var gpa = 0.0;
+	var credit_num = new Array(credit_arr.length);
 	var total = 0;
 	var total_credits = 0;
 
+	for(var t = 0; t < credit_arr.length; t++) {
+		if(credit_arr[t].value == "" || credit_arr[t].value == null) {
+			credit_num[t] = 0;
+		}
+		else {
+			credit_num[t] = parseFloat(credit_arr[t].value);
+		}
+	}
+
 	for(var i = 0; i < grade_arr.length; i++) {
-		if(grade_arr[i].value == 'S')
+		if(grade_arr[i].value == "S" || grade_arr[i].value == "s")
 			grade_num[i] = 10;
-		else if(grade_arr[i].value == 'A')
+		else if(grade_arr[i].value == "A" || grade_arr[i].value == "a")
 			grade_num[i] = 9;
-		else if(grade_arr[i].value == 'B')
+		else if(grade_arr[i].value == "B" || grade_arr[i].value == "b")
 			grade_num[i] = 8;
-		else if(grade_arr[i].value == 'C')
+		else if(grade_arr[i].value == "C" || grade_arr[i].value == "c")
 			grade_num[i] = 7;
-		else if(grade_arr[i].value == 'D')
+		else if(grade_arr[i].value == "D" || grade_arr[i].value == "d")
 			grade_num[i] = 6;
-		else if(grade_arr[i].value == 'E')
+		else if(grade_arr[i].value == "E" || grade_arr[i].value == "e")
 			grade_num[i] = 5;
-		else if(grade_arr[i].value == 'U')
+		else if(grade_arr[i].value == "U" || grade_arr[i].value == "u")
+			grade_num[i] = 0;
+		else if(grade_arr[i].value.length == 0)
 			grade_num[i] = 0;
 	}
 
 	for(var j = 0; j < credit_arr.length; j++) {
-		total += parseInt(credit_arr[j].value) * grade_num[j].value;
-		total_credits += parseInt(credit_arr[j].value);
+		total += credit_num[j] * grade_num[j];
+		total_credits += credit_num[j];
 	}
 
-	gpa = total / total_credits;
+	var gpa = total / total_credits;
 
-	document.getElementById("output").value = gpa;
+	document.getElementById("output1").innerHTML = gpa.toFixed(2);
+}
+
+function calculateCGPA() {
+	var gpa_arr = document.getElementsByName("gpa");
+	var totcredit_arr = document.getElementsByName("totcred");
+
+	var gpa_num = new Array(gpa_arr.length);
+	var totcredit_num = new Array(totcredit_arr.length);
+	var total = 0;
+	var total_credits = 0;
+
+	for(var i = 0; i < gpa_arr.length; i++) {
+		if(gpa_arr[i].value.length == 0) {
+			gpa_num[i] = 0;
+		}
+		else {
+			gpa_num[i] = parseFloat(gpa_arr[i].value);
+		}
+	}
+
+	for(var t = 0; t < totcredit_arr.length; t++) {
+		if(totcredit_arr[t].value.length == 0) {
+			totcredit_num[t] = 0;
+		}
+		else {
+			totcredit_num[t] = parseInt(totcredit_arr[t].value);
+		}
+	}
+
+	for(var j = 0; j < totcredit_arr.length; j++) {
+		total += gpa_num[j] * totcredit_num[j];
+		total_credits += totcredit_num[j];
+	}
+
+	var cgpa = total / total_credits;
+
+	document.getElementById("output2").innerHTML = cgpa.toFixed(2);
 }
