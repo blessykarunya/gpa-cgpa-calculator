@@ -7,6 +7,21 @@
 </head>
 <body>
 	<header>CGPA Calculator</header>
-	
+	<div class="content-table">
+		<div class="initial-input">
+			Enter your GPA and the credits for each semester 
+		</div>
+		<div class="all-input">
+			<table class="table-class" id="input-table">
+				<tr><th>S. No.</th><th>GPA</th><th>Credits Earned</th></tr>
+				<tr> <td>1</td> <td><input type="text" class="credit" name="gpa" id="gpa"></td> <td><input type="text" class="grade" name="totcred" id="totcred"></td> <td><input type="button" value="Add Row" onclick="addRow('input-table')" id="table-btn"></td></tr>
+			</table>
+		</div>
+		<div class="submit"><button class="btn-small" onclick="calculateCGPA()">Submit</button></div>
+		<div class="output">Your CGPA is</div>
+		<div id="output2"></div>
+	</div>
+	<footer>Made by Blessy Karunya</footer>
+	<script src="index.js" charset="UTF-8"></script>
 </body>
 </html>
