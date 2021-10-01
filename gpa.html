@@ -4,6 +4,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GPA Calculator</title>
 	<link rel="stylesheet" href="styles.css">
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+		crossorigin="anonymous"
+	/>
+	<link rel="stylesheet" href="styles.css" />
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+		crossorigin="anonymous">
+	</script>
 </head>
 <body>
 	<header>GPA Calculator</header>
@@ -14,14 +26,25 @@
 		<div class="all-input">
 			<table class="table-class" id="input-table">
 				<tr><th>S. No.</th><th>Total Credits</th><th>Your Grade</th></tr>
-				<tr> <td>1</td> <td><input type="text" class="credit" name="c" id="cred"></td> <td><input type="text" class="grade" name="g" id="grd"></td> <td id="btn-column"><input type="button" value="Add Row" onclick="addRow('input-table')" id="table-btn"></td></tr>
+				<tr>
+					<td id="sno">1</td>
+					<td id="credcol">
+						<input type="text" class="credit" name="c" id="cred">
+					</td>
+					<td id="grdcol">
+						<input type="text" class="grade" name="g" id="grd">
+					</td>
+					<td id="btn-column">
+						<input type="button" value="Add Row" onclick="addRow('input-table')" id="table-btn">
+					</td>
+				</tr>
 			</table>
 		</div>
 		<div class="submit"><button class="btn-small" onclick="calculateGPA()">Submit</button></div>
 		<div class="output">Your GPA is</div>
 		<div id="output1"></div>
 	</div>
-	<footer>Made by Blessy Karunya</footer>
+	<footer class="page-footer">Made by Blessy Karunya</footer>
 	<script src="index.js" charset="UTF-8"></script>
 </body>
 </html>
