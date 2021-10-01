@@ -4,6 +4,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GPA Calculator</title>
 	<link rel="stylesheet" href="styles.css">
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+		crossorigin="anonymous"
+	/>
+	<link rel="stylesheet" href="styles.css" />
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+		crossorigin="anonymous">
+	</script>
 </head>
 <body>
 	<header>CGPA Calculator</header>
@@ -14,7 +26,18 @@
 		<div class="all-input">
 			<table class="table-class" id="input-table">
 				<tr><th>S. No.</th><th>GPA</th><th>Credits Earned</th></tr>
-				<tr> <td>1</td> <td><input type="text" class="credit" name="gpa" id="gpa"></td> <td><input type="text" class="grade" name="totcred" id="totcred"></td> <td><input type="button" value="Add Row" onclick="addRow('input-table')" id="table-btn"></td></tr>
+				<tr>
+					<td>1</td>
+					<td>
+						<input type="text" class="credit" name="gpa" id="gpa">
+					</td>
+					<td>
+						<input type="text" class="grade" name="totcred" id="totcred">
+					</td>
+					<td>
+						<input type="button" value="Add Row" onclick="addRow('input-table')" id="table-btn">
+					</td>
+				</tr>
 			</table>
 		</div>
 		<div class="submit"><button class="btn-small" onclick="calculateCGPA()">Submit</button></div>
